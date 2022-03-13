@@ -25,14 +25,14 @@ public class SFrame extends JFrame {
      * @param height height of frame
      */
     public SFrame(int width, int height) {
-        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
+        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, EXIT_ON_CLOSE, null);
     }
 
     /**
      * Default properties of frame
      */
     public void setProperties() {
-        setProperties(1280, 720, Theme.fBg, true, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
+        setProperties(1280, 720, Theme.fBg, true, blackBorderTransparent, null, EXIT_ON_CLOSE, null);
     }
 
     /**
@@ -63,11 +63,10 @@ public class SFrame extends JFrame {
     }
 
     public void setProperties(int width, int height, Color background, Boolean undecorated, Border border, Component relativeLocation,
-                              Boolean visible, int defaultCloseOperation, LayoutManager layout) {
+                              int defaultCloseOperation, LayoutManager layout) {
         setProperties(width, height, background, undecorated, border, relativeLocation);
         setDefaultCloseOperation(defaultCloseOperation);
         setLayout(layout);
-        setVisible(visible);
     }
 
     public void setMainBar(String title, ActionListener exitAction) {
