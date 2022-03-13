@@ -11,11 +11,15 @@ import static javax.swing.JOptionPane.showInputDialog;
 
 public class ClientController implements Runnable{
     
-    // field
+    // class field
     private static final int PORT = 5050;
+    
+    // field
+    private String serverAddress;
+    private ClientView view;
 
     public ClientController() {
-        String serverAddress = showInputDialog("Server address");
+        serverAddress = showInputDialog("Server address");
         String userName = JOptionPane.showInputDialog("User name");
         String password = JOptionPane.showInputDialog("Password");
         try {
@@ -45,7 +49,7 @@ public class ClientController implements Runnable{
                 if(valid.equals("true")) {
                     System.out.println("The client is registered.");
                     JOptionPane.showMessageDialog(null, dataInputStream.readUTF());
-                    new ClientView(this);
+                    view = new ClientView(this);
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "The client is not registered.");
@@ -53,5 +57,17 @@ public class ClientController implements Runnable{
             }
         } catch (Exception e) {
         }
+    }
+    
+    public void disconnect() {
+        try {
+            Socket socket = new Socket(serverAddress, 5000);
+            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+            dataOutputStream.writeUTF("DISCONNECT");
+            dataOutputStream.close();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar al servidor: "+ex.getMessage());
+        }
+        view.setVisible(false);
     }
 }

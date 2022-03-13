@@ -17,7 +17,7 @@ public class ClientView extends SFrame {
 
         // frame properties
         setLocation(532, 16);
-        setMainBar("Reading app", e -> setVisible(false));
+        setMainBar("Reading app", e -> controller.disconnect());
         setVisible(true);
     }
 }

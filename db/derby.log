@@ -1,7 +1,7 @@
-Sun Mar 13 16:11:09 COT 2022 : Servidor de red Apache Derby: Se ha iniciado 10.14.2.0 - (1828579) y está listo para aceptar las conexiones en el puerto 1527
+Sun Mar 13 18:13:38 COT 2022 : Servidor de red Apache Derby: Se ha iniciado 10.14.2.0 - (1828579) y está listo para aceptar las conexiones en el puerto 1527
 ----------------------------------------------------------------
-Sun Mar 13 16:11:15 COT 2022:
- Iniciando instancia a816c00e-017f-851e-e79f-ffffa0da7295 de Derby, versión The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): 
+Sun Mar 13 18:13:53 COT 2022:
+ Iniciando instancia a816c00e-017f-858f-08a1-ffffa0da7295 de Derby, versión The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): 
 en el directorio de base de datos C:\Jean\Repository\pa-examen-1\db\examen con el cargador de clases jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93
 Cargado desde file:/C:/Jean/Repository/db-derby-10.14.2.0-lib/lib/derby.jar
 java.vendor=Oracle Corporation

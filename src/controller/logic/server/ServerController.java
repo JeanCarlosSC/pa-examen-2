@@ -10,7 +10,7 @@ import view.ServerView;
 
 public class ServerController implements Runnable{
     // const
-    private static final String defaultIP = "192.168.0.106";
+    public static final String defaultIP = "192.168.0.106"; // please set your IPv4 address
     
     // reference
     private ServerView view;
@@ -53,6 +53,10 @@ public class ServerController implements Runnable{
                     }
                     socketResponse.close();
                 }
+                else if(message.equals("DISCONNECT")) {
+                    view.printMessage("An user has disconnected from server");
+                    view.printMessage("Waiting for a new connection");
+                }
                 else {
                     System.out.println("invalid petition code"); // server debugging
                 }
@@ -61,5 +65,9 @@ public class ServerController implements Runnable{
             view.printMessage(ex.getMessage());
             ex.printStackTrace();
         }
+    }
+    
+    public void read(String text) {
+        
     }
 }
