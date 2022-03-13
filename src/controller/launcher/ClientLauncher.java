@@ -1,4 +1,4 @@
-package controller;
+package controller.launcher;
 
 import view.ClientView;
 
