@@ -13,8 +13,8 @@ import static lib.sRAD_java.gui.component.Resource.*;
 
 public class MainBar extends SPanel {
 
-    private final static ImageIcon iBtMinOff = new ImageIcon("resources/sRAD/mainBar/btMinOff.png");
-    private final static ImageIcon iBtMinOn = new ImageIcon("resources/sRAD/mainBar/btMinOn.png");
+    private final static ImageIcon iBtMinOff = new ImageIcon("resource/sRAD/mainBar/btMinOff.png");
+    private final static ImageIcon iBtMinOn = new ImageIcon("resource/sRAD/mainBar/btMinOn.png");
 
     private final SPanel mainPanel;
     private final SLabel lLogo = new SLabel();

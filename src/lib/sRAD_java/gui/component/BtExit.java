@@ -8,8 +8,8 @@ import java.awt.event.MouseListener;
 
 public class BtExit extends SButton implements MouseListener {
 
-    private final static ImageIcon iBtExitOn = new ImageIcon("resources/sRAD/mainBar/btExitOn.png");
-    private final static ImageIcon iBtExitOff = new ImageIcon("resources/sRAD/mainBar/btExitOff.png");
+    private final static ImageIcon iBtExitOn = new ImageIcon("resource/sRAD/mainBar/btExitOn.png");
+    private final static ImageIcon iBtExitOff = new ImageIcon("resource/sRAD/mainBar/btExitOff.png");
 
     public BtExit(int x, int y) {
         super(x, y, iBtExitOff);

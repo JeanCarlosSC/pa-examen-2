@@ -7,40 +7,40 @@ import java.awt.*;
 public class Resource {
 
 //----------------------------------------COLOUR PALETTES---------------------------------------------------------------
-    //basic
+    // basic
     public final static Color BLACK = new Color(0, 0, 0);
     public final static Color RED = new Color(255, 0, 0);
     public final static Color WHITE = new Color(255, 255, 255);
 
-    //green complementary cake
+    // green complementary cake
     public final static Color GCC1 = new Color(122, 179, 102);
     public final static Color GCC2 = new Color(193, 255, 171);
     public final static Color GCC3 = new Color(212, 255, 196);
     public final static Color GCC4 = new Color(179, 84, 167);
     public final static Color GCC5 = new Color(255, 171, 245);
 
-    //azul gris celeste análogo
+    // azul gris celeste análogo
     public final static Color AGCA1 = new Color(74, 75, 246);
     public final static Color AGCA2 = new Color(63, 104, 212);
     public final static Color AGCA3 = new Color(82, 164, 235);
     public final static Color AGCA4 = new Color(63, 181, 212);
     public final static Color AGCA5 = new Color(74, 246, 235);
 
-    //monochrome dark blue
+    // monochrome dark blue
     public final static Color MDB1 = new Color(46, 49, 107);
     public final static Color MDB2 = new Color(78, 80, 107);
     public final static Color MDB3 = new Color(79, 84, 184);
     public final static Color MDB4 = new Color(101, 107, 235);
     public final static Color MDB5 = new Color(174, 177, 238);
 
-    //warning paleta
+    // warning palette
     public final static Color WP1 = new Color(72, 140, 3);
     public final static Color WP2 = new Color(132, 217, 4);
     public final static Color WP3 = new Color(242, 203, 5);
     public final static Color WP4 = new Color(242, 159, 5);
     public final static Color WP5 = new Color(242, 68, 5);
 
-    //special palette 1
+    // special palette 1
     public final static Color SP1 = new Color(169, 105, 0);
     public final static Color SP2 = new Color(232, 145, 0);
     public final static Color SP3 = new Color(255, 225, 0);
@@ -49,7 +49,7 @@ public class Resource {
     public final static Color SP6 = new Color(70, 147, 171);
     public final static Color SP7 = new Color(72, 206, 247);
 
-    //others and specials
+    // others and specials
     public final static Color blackTransparent = new Color(0F, 0F, 0F, 0.8F);
     public final static Color transparentMustard = new Color(1F, 1F, 0F, 0.5F);
     public final static Color transparent = new Color(0F, 0F, 0F, 0F);
@@ -58,14 +58,14 @@ public class Resource {
     public final static Color semiDarkWhite = new Color(210, 210, 210);
 
 //--------------------------------------COLOR THEMES--------------------------------------------------------------------
-    //tema amigable
-    public final static Color TA1 = new Color(184, 84, 80);
-    public final static Color TA2 = new Color(108, 142, 191);
-    public final static Color TA3 = new Color(214, 182, 86);
-    public final static Color TA4 = new Color(255, 89, 89);
-    public final static Color TA5 = new Color(248, 206, 204);
-    public final static Color TA6 = new Color(218, 232, 252);
-    public final static Color TA7 = new Color(255, 242, 204);
+    // friendly theme
+    public final static Color FT1 = new Color(184, 84, 80);
+    public final static Color FT2 = new Color(108, 142, 191);
+    public final static Color FT3 = new Color(214, 182, 86);
+    public final static Color FT4 = new Color(255, 89, 89);
+    public final static Color FT5 = new Color(248, 206, 204);
+    public final static Color FT6 = new Color(218, 232, 252);
+    public final static Color FT7 = new Color(255, 242, 204);
 
     //Dark Theme based on Intellij Idea
     public final static Color DTII1 = new Color(49, 51, 53); //second background
@@ -90,7 +90,7 @@ public class Resource {
     public final static Font fontTitleMini = new Font("Arial", Font.PLAIN, 14); //used in title of mainBar, buttons
     public final static Font fontVersion = new Font("Arial", Font.PLAIN, 14);
 
-    public final static Font fontText = new Font("Arial", Font.PLAIN, 17);
+    public final static Font fontText = new Font("Arial", Font.PLAIN, 15);
     public final static Font WSFS = new Font("Arial", Font.ITALIC, 20); //windows standard font subtitle
     public final static Font fontEcuation = new Font("Arial Narrow", Font.ITALIC, 20);
     public final static Font fontTextMini = new Font("Arial Narrow", Font.PLAIN, 14);
@@ -128,9 +128,9 @@ public class Resource {
     public final static Border darkGrayBorder = BorderFactory.createLineBorder(DTII1, 2, false);
 
     //tema amigable
-    public final static Border ta2Border = BorderFactory.createLineBorder(TA3, 2, false);
-    public final static Border ta4Border = BorderFactory.createLineBorder(TA1, 2, false);
-    public final static Border ta6Border = BorderFactory.createLineBorder(TA2, 2, false);
+    public final static Border ta2Border = BorderFactory.createLineBorder(FT3, 2, false);
+    public final static Border ta4Border = BorderFactory.createLineBorder(FT1, 2, false);
+    public final static Border ta6Border = BorderFactory.createLineBorder(FT2, 2, false);
 
     //special palette 1
     public final static Border darkOcherBorder = BorderFactory.createLineBorder(SP1, 2, false);

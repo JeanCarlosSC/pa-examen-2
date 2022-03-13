@@ -71,7 +71,7 @@ public class SFrame extends JFrame {
     }
 
     public void setMainBar(String title, ActionListener exitAction) {
-        setMainBar(title, "resources/sRAD/exampleLogo.png", exitAction);
+        setMainBar(title, "resource/sRAD/exampleLogo.png", exitAction);
     }
 
     public void setMainBar(String title, String pathLogo, ActionListener exitAction) {
