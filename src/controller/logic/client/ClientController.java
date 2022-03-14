@@ -1,25 +1,22 @@
 package controller.logic.client;
 
+import controller.logic.server.ServerController;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import view.ClientView;
 import java.net.*;
 import javax.swing.*;
 
 import static javax.swing.JOptionPane.showInputDialog;
+import view.Ventana;
 
 public class ClientController implements Runnable{
     
     // class field
     private static final int PORT = 5050;
     
-    // field
-    private String serverAddress;
-    private ClientView view;
-
     public ClientController() {
-        serverAddress = showInputDialog("Server address");
+        String serverAddress = showInputDialog("Server address");
         String userName = JOptionPane.showInputDialog("User name");
         String password = JOptionPane.showInputDialog("Password");
         try {
@@ -45,29 +42,45 @@ public class ClientController implements Runnable{
             while(true) {
                 socket = serverSocket.accept();
                 DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-                String valid = dataInputStream.readUTF();
-                if(valid.equals("true")) {
+                String response = dataInputStream.readUTF();
+                if(response.equals("true")) {
                     System.out.println("The client is registered.");
                     JOptionPane.showMessageDialog(null, dataInputStream.readUTF());
-                    view = new ClientView(this);
+                    new Ventana(this, dataInputStream.readUTF());
+                }
+                else if(response.equals("false")) {
+                    JOptionPane.showMessageDialog(null, "The client is not registered.");
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "The client is not registered.");
+                    JOptionPane.showMessageDialog(null, response);
                 }
             }
         } catch (Exception e) {
         }
     }
     
-    public void disconnect() {
+    public void disconnect(Ventana view) {
         try {
-            Socket socket = new Socket(serverAddress, 5000);
+            Socket socket = new Socket(ServerController.defaultIP, 5000);
             DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
             dataOutputStream.writeUTF("DISCONNECT");
+            dataOutputStream.writeUTF(view.getUserName());
             dataOutputStream.close();
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "No se ha podido conectar al servidor: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "No se ha podido desconectar del servidor: "+ex.getMessage());
         }
         view.setVisible(false);
+    }
+    
+    public void read(String text) {
+        try {
+            Socket socket = new Socket(ServerController.defaultIP, 5000);
+            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+            dataOutputStream.writeUTF("READ");
+            dataOutputStream.writeUTF(text);
+            dataOutputStream.close();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "No se pudo leer: "+ex.getMessage());
+        }
     }
 }

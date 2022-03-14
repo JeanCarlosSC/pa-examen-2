@@ -31,4 +31,6 @@ public class ServerView extends SFrame {
     public void printMessage(String message) {
         taLog.append(message + ".\n");
     }
+    
 }
+
